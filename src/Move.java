@@ -26,4 +26,14 @@ public class Move extends player {
 			return x, ++y;
 			break;
 	}
+	
+	public boolean isCorrectIn(String input){
+        String[] sp = input.split("");
+        if(sp.length == 1 && (sp[0].equals("u") || sp[0].equals("d") || sp[0].equals("r") || sp[0].equals("l") || sp[0].equals("s"))){
+            return true;
+        }
+        System.out.println("正しいキーを入力して下さい");
+        return false;
+	}
+	
 }
