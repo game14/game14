@@ -31,8 +31,6 @@ public class koukadaiRaider {
     }
     
     public static void welcome() {
-        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-                + "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         System.out.println("-----------------------");
         System.out.println("    KOUKADAI RAIDER    ");
         System.out.println("-----------------------");
