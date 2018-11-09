@@ -1,11 +1,18 @@
 /**
  * Created by takumi on 2018/11/02.
  */
-public class Map {
-	static String[][] m = new String[5][5];
-	public emptyMap(){
+import java.util.Random;
+import java.util.Scanner;
 
-		static String[][] r = new String[15][6];
+public class Map {
+    Random random = new Random;
+    int randomValue = random.nextInt(14);
+
+    static String[][] m = new String[5][5];
+	public emptyMap(){
+        static int[][] mapState = MapState.getMapState();
+
+        static String[][] r = new String[15][6];
 
 		r[0][0] = "*******";
 		r[0][1] = "*     *";
@@ -115,6 +122,36 @@ public class Map {
 
 	}
 
+    public static mapScreen(){
+        int random = rnd;
+        for(int i=0;i<5;i++){
+            for(int j=0;j<5++){
+                for(int k=0;k<6;k++){
+                    m[i][j]=r[rnd][k];
+
+                }
+            }
+            // System.out.print(r[mapstate[][i]]);
+        }
+    }
+
+
+    public static void setPlayer(int roomNo) {
+        r[roomNo][4] = "*  P  *";
+    }
+    public static void setEnemy(int roomNo) {
+        r[roomNo][2] = "*  E  *";
+    }
+
+    public static void setSmoke(int roomNo) {
+        r[roomNo][1] = "*    S*";
+    }
+
+    public static void setWepon(int roomNo) {
+        r[roomNo][3] = "*W    *";
+    }
+}
+/*
 	public enemyInMap(){
 		static String[][] r = new String[15][6];
 
@@ -224,6 +261,7 @@ public class Map {
 		r[14][4] = "*     *";
 		r[14][5] = "***D***";
 	}
+
 	public smokeInMap(){
 
 		static String[][] r = new String[15][6];
@@ -446,5 +484,6 @@ public class Map {
         r[14][5] = "***D***";
 
     }
-}
+*/
+
 
