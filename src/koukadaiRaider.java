@@ -2,7 +2,7 @@ import com.sun.media.jfxmedia.events.PlayerStateEvent;
 
 import java.util.Scanner;
 
-public class lol {
+public class koukadaiRaider {
 	public static final Scanner USERINPUT = new Scanner(System.in);
 	
     public static void main(String[] args) {
