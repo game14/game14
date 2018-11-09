@@ -3,6 +3,6 @@
  */
 public class Map {
 	int map[][] = new int [5][5];
-
+		//test
 }
 
