@@ -9,7 +9,7 @@ public class koukadaiRaider {
         System.out.println("ゲーム開始");
         Map map = new Map();    //ダンジョンの初期化
         Move mv = new Move();　//プレイヤーの移動
-        Battle bt = new Battle();
+        Battle bt = new Battle(); //戦闘の呼び出し
     }
 }
 
