@@ -4,15 +4,14 @@
 import java.util.*;
 
 public class Move {
+	System.out.print("移動する方向を選んでください");
 	Scanner sc = new Scanner(System.in);
 	String str = sc.nextLine();
 
 	/*if(str==){//レーダーの処理
 		System.out.print(レーダーを使った);
 	}*/
-
-	System.out.print("移動する方向を選んでください");
-	str = sc.next();
+	
 	switch(str){
 		case u: 
 			return  
