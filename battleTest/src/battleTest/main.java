@@ -17,7 +17,7 @@ public class main {
 	}
 	
 	public static void battle() throws InterruptedException {
-		System.out.println("Select Sword");
+		System.out.println("武器の本数を選択してください。");//Select Sword
 		System.out.println("1,  2,  or 3");
 		String selection = USERINPUT.nextLine();
         switch (selection) {
@@ -34,45 +34,45 @@ public class main {
             	System.exit(0);
         }
 		while(PlayerHP != 0) {
-			System.out.println("Press Enter to attack");
+			System.out.println("エンターキーで攻撃開始");//Press Enter to attack
 			USERINPUT.nextLine();
 			
 			diceroll();
 			if(sword == 2) {
-				System.out.println("Sword makes double damage");
+				System.out.println("攻撃力2倍！");//Sword makes double damage
 				attackNum = attackNum*2;
 			} else if (sword == 3) {
-				System.out.println("Sword makes triple damage");
+				System.out.println("攻撃力3倍！");//Sword makes triple damage
 				attackNum = attackNum*3;
 			} else {
 				attackNum = attackNum*1;
 			}
 					
-			System.out.println(attackNum+ " DAMAGE");
+			System.out.println(attackNum+ " ダメージ！");//DAMAGE
 			EnemyHP = EnemyHP-attackNum;
 			if(EnemyHP <= 0) {
-				System.out.println("EnemyHP is 0");
-				System.out.println("He is dead");
+				System.out.println("敵のHP:0");//Enemy HP is 
+				System.out.println("敵を倒した！");//He is dead
 			} else {
-				System.out.println("EnemyHP is "+ EnemyHP);
+				System.out.println("敵のHP:"+ EnemyHP);//EnemyHP is 
 			}
 			Thread.sleep(1000);
 			
 			if (EnemyHP <= 0) {
 				System.out.println("");
-				System.out.println("WIN");
+				System.out.println("戦闘に勝利！");//WIN
 				break;
 			} else {
-				System.out.println("EnemyHP counter attack");
+				System.out.println("敵の反撃！");//EnemyHP counter attack
 				diceroll();
-				System.out.println(attackNum+ " DAMAGE");
+				System.out.println(attackNum+ " ダメージ！");//DAMAGE
 				PlayerHP = PlayerHP-attackNum;
 				
 				if(PlayerHP <= 0) {
-					System.out.println("Your HP is 0");
-					System.out.println("Game Over");
+					System.out.println("プレイヤーのHP:0");//Your HP is 
+					System.out.println("ゲームオーバー");//Game over
 				} else {
-					System.out.println("PlayerHP is "+ PlayerHP);
+					System.out.println("プレイヤーのHP:"+ PlayerHP);//Your HP is
 				}
 				
 			}
