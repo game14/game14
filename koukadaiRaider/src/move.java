@@ -19,17 +19,27 @@ public class move {
         int y = map.y;
         while (gameActive) {
         		//map
-                for (int i = 0; i < 5; i++) {// prints columns
-                        for (int j = 0; j < 5; j++) {//prints rows
-                                if (i == y & j == x) {//checks
-                                        System.out.print("o");
-                                } else {
-                                        System.out.print("X");
-                                }
-                        }
-                        System.out.println("");
+            for (int i = 0; i < 5; i++) {// prints columns
+                for (int j = 0; j < 5; j++) {//prints rows
+                    if (i == y & j == x) {//checks
+                        System.out.print("***D***\n*     *\n*     *\n*     *\n*     *\n*******\n");
+                        System.out.print(x);
+                        System.out.println(y);
+                    } else if(y<0){
+                        System.out.print("そっちにはいけないよ\n");
+                        y++;
+                    }else if(y>4){
+                        System.out.print("そっちにはいけないよ\n");
+                        y--;
+                    }else if(x<0){
+                        System.out.print("そっちにはいけないよ\n");
+                        x++;
+                    }else if(x>4){
+                        System.out.print("そっちにはいけないよ\n");
+                        x--;
+                    }
                 }
-                
+            }
                 if (x == 2 && y == 0) {
                 	System.out.println("You are at the start");
                 	System.out.println("");
