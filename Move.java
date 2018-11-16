@@ -1,29 +1,96 @@
-/**
- * Created by takumi on 2018/11/02.
- */
-import java.util.*;
+package src;
 
-public class Move extends player {
+import java.util.Scanner;
 
-	Scanner sc = new Scanner(System.in);
-	String str = sc.nextLine();
+public class move {
+	Scanner USERINPUT = new Scanner(System.in);
+	public int theHP; 
+	public int flag;
+	public int positionX;
+	public int positionY;
+	
+	public void moving() {
+		theHP = koukadaiRaider.playerHP;
+		map map1 = new map();
+		
+		boolean gameActive = true;
+        Scanner in = new Scanner(System.in);
+        int x = map.x;
+        int y = map.y;
+        while (gameActive) {
+        		//map
+                for (int i = 0; i < 5; i++) {// prints columns
+                        for (int j = 0; j < 5; j++) {//prints rows
+                                if (i == y & j == x) {//checks
+                                        System.out.print("o");
+                                } else {
+                                        System.out.print("X");
+                                }
+                        }
+                        System.out.println("");
+                }
+                
+                if (x == 2 && y == 0) {
+                	System.out.println("You are at the start");
+                	System.out.println("");
+                }
+                
+                if (x == 4 && y == 0) {
+                	System.out.println("BOSS");
+                }
+                
+                if (x == 1 && y == 4) {
+                	System.out.println("You got a Sword");
+                }
 
-	switch(str){
-		case s:
-			System.out.print(レーダーを使った！);
-			return ++x, --x, ++y, --y;
-			break;
-		case u: 
-			return x, --y;
-			break;
-		case r:
-			return ++x, y;
-			break;
-		case l:
-			return --x, y;
-			break;
-		case d:
-			return x, ++y;
-			break;
+                System.out.println("Enter 1 to quit");
+                System.out.println("Enter u,d,l,r");
+                String move = in.next();
+                if (move.equals("1")) { //quits 
+                        gameActive = false;
+                        break;
+                }
+                if (move.equals("u")) { //movement commands
+                    y--;
+                } else if (move.equals("d")) {
+                    y++;
+                } else if (move.equals("l")) {
+                	x--;
+                } else if (move.equals("r")) {
+                    x++;
+                } else {
+                	System.out.println("");
+                	System.out.println("ERROR");
+                }
+
+        }
+        
+		/*
+		int positionX = 0;
+		int positionY = 0;
+		map map1 = new map();
+		if (positionX == 0 && positionY == 0) {
+			System.out.println("Start");
+			System.out.println("Write u to go north");
+			direction = USERINPUT.nextLine();
+			if(direction.equals("u")) {
+				System.out.println("north");
+				battle bat = new battle();
+				bat.fight();
+				theHP = bat.hp;
+			} else if(direction.equals("s")) {
+				System.out.println("yes");
+				flag();
+				return;
+			} else {
+				return;
+			}		
+		}
+		*/
 	}
+	public void flag() {
+		flag = 1;
+		return;
+	}
+
 }
