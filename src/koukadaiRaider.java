@@ -129,9 +129,7 @@ public class koukadaiRaider {
         } while (status == false);     
 }
     
-	    
-	    
-    
+	
     public class Player {
     	public int PlayerHP = 0;
     	public Player(int a) {
