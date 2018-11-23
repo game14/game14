@@ -39,6 +39,18 @@ public class koukadaiRaider {
         boolean status = false;
         do {
             String selection = USERINPUT.nextLine();
+	    if(authorization1(selection)==false){
+                System.out.println("");
+                System.out.println("");
+                System.out.println("WARNING!");
+                System.out.println("");
+                System.out.println("1から3で入力して下さい");
+                System.out.println(" １）     START        ");
+                System.out.println(" ２）     ゲームのルール        ");
+                System.out.println(" ３）     EXIT        ");
+                System.out.println();
+                System.out.print(" 入力してください:  ");
+            }else{
             switch (selection) {
                 case "1":
                     newGame();
@@ -51,7 +63,7 @@ public class koukadaiRaider {
                 case "3":
                     System.exit(0);
             }
-
+	    }
         } while (status == false);
     }
     
@@ -107,6 +119,13 @@ public class koukadaiRaider {
        
 	do {
             String selection = USERINPUT.nextLine();
+	    if(authorization2(selection)==false){
+                System.out.println("");
+                System.out.println("");
+                System.out.println("WARNING!");
+                System.out.println("");
+                System.out.println("1から7で入力して下さい");
+            }else{
             switch (selection) {
                 case "1"://ゲームの目的
                 	System.out.println("プレイヤーの目的は敵をやり過ごしながらダンジョン内の宝を集め、脱出することである。\r\n" + 
@@ -161,10 +180,38 @@ public class koukadaiRaider {
             System.out.println("Press Enter key");
             USERINPUT.nextLine();
             rule();
+	}
         } while (status == false);     
 }
 
+    public static boolean isNumber(String s) {
+        return Pattern.compile("^-?[0-9]+$").matcher(s).find();
+    }
     
+    public static boolean authorization1(String s){
+        try{
+            int a = Integer.parseInt(s);
+            if(a >= 4 || a == 0){
+                return false;
+            }
+        }catch(NumberFormatException e){
+            return false;
+        }
+        return true;
+    }
+    
+    public static boolean authorization2(String s){
+        try{
+            int a = Integer.parseInt(s);
+            if(a >= 8 || a == 0){
+                return false;
+            }
+        }catch(NumberFormatException e){
+            return false;
+        }
+        return true;
+    }
+
     public static void loseCondition() {
     	if (playerHP >= 0) {
     		System.out.println("");
